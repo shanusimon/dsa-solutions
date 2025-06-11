@@ -3,7 +3,7 @@
 let arr = [3, 2, 2, 3];
 let val = 3;
 
-// 🔹 Brute Force Approach
+// 🔹 Brute Force Approach Time:-O(n^2) 
 
 let n = arr.length;
 
@@ -26,7 +26,7 @@ console.log(arr); // Final array with val removed (logical part up to n)
 console.log(n);   // New length after removal
 
 
-// 🔹 Two-Pointer Approach (Optimized)
+// 🔹 Two-Pointer Approach (Optimized) Time:-O(n)
 
 function RemoveElement(arr, val) {
     let k = 0; 
