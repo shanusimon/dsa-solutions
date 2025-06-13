@@ -35,5 +35,7 @@ function bubbleSort(arr) {
 
     return arr;
 }
+// i counts how many elements are already sorted at the end of the array.
+// j goes from 0 to n - i - 1 to compare all unsorted adjacent pairs
 
 console.log(bubbleSort([8, 3, 7, 5])); // Output: [3, 5, 7, 8]
