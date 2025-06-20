@@ -5,7 +5,7 @@ function mergeSort(arr) {
     if (arr.length <= 1) {
         return arr;
     }
-
+    
     // Divide: Find the midpoint and split the array into two halves
     let mid = Math.floor(arr.length / 2);
     let left = arr.slice(0, mid);
