@@ -37,11 +37,9 @@ function selectionSort(arr) {
                 mini = j;
             }
         }
-
         // Swap the found minimum element with the first unsorted element
         [arr[i], arr[mini]] = [arr[mini], arr[i]];
     }
-
     return arr;
 }
 

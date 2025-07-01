@@ -109,7 +109,7 @@ class LinkedList {
       }
     }
   }
-
+  
   reverse() {
     let crr = this.head;
     let prev = null;

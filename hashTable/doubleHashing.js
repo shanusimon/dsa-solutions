@@ -38,7 +38,7 @@ class HashTable {
 
     // Double hashing probe: index = (h1 + i * h2) % size
     while (
-      this.table[(index = (index1 + i * index2) % this.size)] &&
+      this.table[index = ((index1 + i * index2) % this.size)] &&
       this.table[index][0] !== key
     ) {
       i++;
