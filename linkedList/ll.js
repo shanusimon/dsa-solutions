@@ -47,6 +47,7 @@ class LinkedList {
     if (index === 0) {
       this.head = this.head.next;
     } else {
+      a;
       let prev = this.head;
       for (let i = 0; i < index - 1; i++) {
         prev = prev.next;
@@ -77,7 +78,7 @@ class LinkedList {
     }
 
     let left = this.head;
-    let right = prev; 
+    let right = prev;
 
     while (right) {
       if (left.value !== right.value) return false;
@@ -109,7 +110,7 @@ class LinkedList {
       }
     }
   }
-  
+
   reverse() {
     let crr = this.head;
     let prev = null;
@@ -170,13 +171,55 @@ class LinkedList {
       crr = crr.next;
     }
   }
+  sumOfFirstAndLastTwo() {
+    if (this.size < 2) {
+      console.log("Not enough nodes");
+      return;
+    }
+
+    let first = this.head.value;
+    let second = this.head.next ? this.head.next.value : 0;
+
+    let crr = this.head;
+    let secondLast = null;
+    let last = null;
+
+    while (crr.next && crr.next.next) {
+      crr = crr.next;
+    }
+
+    if (crr.next) {
+      secondLast = crr.value;
+      last = crr.next.value;
+    } else {
+      // Only 2 elements
+      secondLast = 0;
+      last = crr.value;
+    }
+
+    return first + second + secondLast + last;
+  }
+  removeLastSecond() {
+    if (this.isEmpty()) {
+      console.log("The LL is empty");
+      return;
+    }
+
+    let crr = this.head;
+    while (crr.next && crr.next.next.next) {
+      crr = crr.next;
+    }
+    crr.next = crr.next.next;
+  }
 
   print() {
     let crr = this.head;
+    let list = ""
     while (crr) {
-      console.log(`${crr.value}->`);
+      list += crr.value + "->"
       crr = crr.next;
     }
+    console.log(list)
   }
 }
 const ll = new LinkedList();
@@ -187,5 +230,5 @@ ll.addToLast(100);
 ll.addToLast(10);
 ll.addToLast(100);
 ll.print();
-ll.removeDuplicates();
+ll.removeLastSecond();
 ll.print();
